@@ -9,6 +9,9 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { Routes, RouterModule } from '../../node_modules/@angular/router';
 import { AsadoManagerComponent } from './asado-manager/asado-manager.component';
+import { GastosViajesComponent } from './gastos-viajes/gastos-viajes.component';
+import { ControlGastosComponent } from './control-gastos/control-gastos.component';
+import { LoginComponent } from './login/login.component';
 
 const appRouter: Routes = [
   {path: 'asado-manager', component: AsadoManagerComponent}
@@ -18,7 +21,10 @@ const appRouter: Routes = [
   declarations: [
     AppComponent,
     MyNavComponent,
-    AsadoManagerComponent
+    AsadoManagerComponent,
+    GastosViajesComponent,
+    ControlGastosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
