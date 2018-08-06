@@ -13,13 +13,15 @@ import { GastosViajesComponent } from './gastos-viajes/gastos-viajes.component';
 import { ControlGastosComponent } from './control-gastos/control-gastos.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth/auth.guard';
+import { RegisterComponent } from './register/register.component';
 
 const appRouter: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'asado-manager', component: AsadoManagerComponent, canActivate: [ AuthGuard ] },
   { path: 'gastos-viajes', component: GastosViajesComponent, canActivate: [ AuthGuard ] },
   { path: 'control-gastos', component: ControlGastosComponent, canActivate: [ AuthGuard ]},
-  { path: 'login', component: LoginComponent}
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent }
 ]
 
 @NgModule({
@@ -29,7 +31,8 @@ const appRouter: Routes = [
     AsadoManagerComponent,
     GastosViajesComponent,
     ControlGastosComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
