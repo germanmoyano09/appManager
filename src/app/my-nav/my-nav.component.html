@@ -1,5 +1,5 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
+  <mat-sidenav *ngIf="isLoggedIn$ | async"
     #drawer
     class="sidenav"
     fixedInViewport="true"
@@ -14,7 +14,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" *ngIf="isLoggedIn$ | async">
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -24,8 +24,11 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>appManager</span>
+      <button class="btn btn-secondary float-right" (click)="logout()" >logout</button>
     </mat-toolbar>
     <router-outlet></router-outlet>
-    <!-- Add Content Here -->
   </mat-sidenav-content>
 </mat-sidenav-container>
+<ng-template #login_content>
+  <app-login></app-login>
+</ng-template>
