@@ -16,8 +16,8 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
       if (!this._auth.isAuthenticated()) {
-        this._router.navigate(['/asadoManager']);
+        this._router.navigate(['/login']);
       }
-      return true;
+    return true;
   }
 }

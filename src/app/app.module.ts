@@ -12,11 +12,13 @@ import { AsadoManagerComponent } from './asado-manager/asado-manager.component';
 import { GastosViajesComponent } from './gastos-viajes/gastos-viajes.component';
 import { ControlGastosComponent } from './control-gastos/control-gastos.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const appRouter: Routes = [
-  { path: 'asado-manager', component: AsadoManagerComponent },
-  { path: 'gastos-viajes', component: GastosViajesComponent },
-  { path: 'control-gastos', component: ControlGastosComponent},
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'asado-manager', component: AsadoManagerComponent, canActivate: [ AuthGuard ] },
+  { path: 'gastos-viajes', component: GastosViajesComponent, canActivate: [ AuthGuard ] },
+  { path: 'control-gastos', component: ControlGastosComponent, canActivate: [ AuthGuard ]},
   { path: 'login', component: LoginComponent}
 ]
 
