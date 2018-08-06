@@ -14,7 +14,10 @@ import { ControlGastosComponent } from './control-gastos/control-gastos.componen
 import { LoginComponent } from './login/login.component';
 
 const appRouter: Routes = [
-  {path: 'asado-manager', component: AsadoManagerComponent}
+  { path: 'asado-manager', component: AsadoManagerComponent },
+  { path: 'gastos-viajes', component: GastosViajesComponent },
+  { path: 'control-gastos', component: ControlGastosComponent},
+  { path: 'login', component: LoginComponent}
 ]
 
 @NgModule({
