@@ -14,10 +14,14 @@ import { ControlGastosComponent } from './control-gastos/control-gastos.componen
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth/auth.guard';
 import { RegisterComponent } from './register/register.component';
+import { CreateAsadoComponent } from './asado-manager/create-asado/create-asado.component';
 
 const appRouter: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'asado-manager', component: AsadoManagerComponent, canActivate: [ AuthGuard ] },
+  { path: 'asado-manager', component: AsadoManagerComponent, canActivate: [ AuthGuard ]},
+  { path: 'asado-manager/create-asado', component: CreateAsadoComponent, canActivate: [ AuthGuard ]},
+  { path: 'asado-manager', component: AsadoManagerComponent, canActivate: [ AuthGuard ]},
+  { path: 'asado-manager', component: AsadoManagerComponent, canActivate: [ AuthGuard ]},
   { path: 'gastos-viajes', component: GastosViajesComponent, canActivate: [ AuthGuard ] },
   { path: 'control-gastos', component: ControlGastosComponent, canActivate: [ AuthGuard ]},
   { path: 'register', component: RegisterComponent },
@@ -32,7 +36,8 @@ const appRouter: Routes = [
     GastosViajesComponent,
     ControlGastosComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CreateAsadoComponent
   ],
   imports: [
     BrowserModule,
